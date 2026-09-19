@@ -1,0 +1,373 @@
+/* ============================================================================
+   ONBOARDING TOUR - Minimalistic Theme
+   ============================================================================ */
+
+/* Overlay */
+.onboarding-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Highlight box around target element */
+.onboarding-highlight {
+  position: absolute;
+  z-index: 9999;
+  border: 3px solid #000000;
+  border-radius: 6px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Tooltip */
+.onboarding-tooltip {
+  position: absolute;
+  z-index: 10000;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 380px;
+  width: 90vw;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Header */
+.onboarding-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.onboarding-tooltip-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.onboarding-tooltip-close {
+  background: none;
+  border: none;
+  color: #757575;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onboarding-tooltip-close:hover {
+  background: #f5f5f5;
+  color: #000000;
+}
+
+.onboarding-tooltip-close:active {
+  transform: scale(0.95);
+}
+
+/* Content */
+.onboarding-tooltip-content {
+  padding: 1rem 1.5rem 1.25rem;
+  font-size: 0.938rem;
+  line-height: 1.6;
+  color: #424242;
+}
+
+/* Footer */
+.onboarding-tooltip-footer {
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid #f5f5f5;
+}
+
+.onboarding-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.onboarding-step-counter {
+  font-size: 0.813rem;
+  font-weight: 500;
+  color: #757575;
+}
+
+.onboarding-progress-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.onboarding-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.onboarding-progress-dot.active {
+  background: #000000;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.onboarding-progress-dot.completed {
+  background: #757575;
+}
+
+/* Actions */
+.onboarding-actions {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.onboarding-btn {
+  min-height: 44px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.onboarding-btn:active {
+  transform: translateY(1px);
+}
+
+.onboarding-btn-primary {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.onboarding-btn-primary:hover {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+.onboarding-btn-secondary {
+  background: #ffffff;
+  color: #000000;
+  border-color: #e0e0e0;
+}
+
+.onboarding-btn-secondary:hover {
+  background: #f5f5f5;
+  border-color: #bdbdbd;
+}
+
+.onboarding-btn-ghost {
+  background: transparent;
+  color: #757575;
+  border-color: transparent;
+}
+
+.onboarding-btn-ghost:hover {
+  background: #f5f5f5;
+  color: #000000;
+}
+
+/* ============================================================================
+   DARK MODE
+   ============================================================================ */
+
+body.dark-mode .onboarding-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode .onboarding-highlight {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.85);
+}
+
+body.dark-mode .onboarding-tooltip {
+  background: #1a1a1a;
+  border-color: #333333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .onboarding-tooltip-header {
+  border-bottom-color: #2a2a2a;
+}
+
+body.dark-mode .onboarding-tooltip-title {
+  color: #ffffff;
+}
+
+body.dark-mode .onboarding-tooltip-close {
+  color: #bdbdbd;
+}
+
+body.dark-mode .onboarding-tooltip-close:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+body.dark-mode .onboarding-tooltip-content {
+  color: #e0e0e0;
+}
+
+body.dark-mode .onboarding-tooltip-footer {
+  border-top-color: #2a2a2a;
+}
+
+body.dark-mode .onboarding-step-counter {
+  color: #bdbdbd;
+}
+
+body.dark-mode .onboarding-progress-dot {
+  background: #333333;
+}
+
+body.dark-mode .onboarding-progress-dot.active {
+  background: #ffffff;
+}
+
+body.dark-mode .onboarding-progress-dot.completed {
+  background: #757575;
+}
+
+body.dark-mode .onboarding-btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+body.dark-mode .onboarding-btn-primary:hover {
+  background: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+body.dark-mode .onboarding-btn-secondary {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+body.dark-mode .onboarding-btn-secondary:hover {
+  background: #2a2a2a;
+  border-color: #424242;
+}
+
+body.dark-mode .onboarding-btn-ghost {
+  color: #bdbdbd;
+}
+
+body.dark-mode .onboarding-btn-ghost:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  .onboarding-tooltip {
+    max-width: 340px;
+    border-radius: 12px;
+  }
+
+  .onboarding-tooltip-header {
+    padding: 1rem 1.25rem 0.625rem;
+  }
+
+  .onboarding-tooltip-title {
+    font-size: 1rem;
+  }
+
+  .onboarding-tooltip-content {
+    padding: 0.875rem 1.25rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .onboarding-tooltip-footer {
+    padding: 0.875rem 1.25rem 1rem;
+  }
+
+  .onboarding-actions {
+    gap: 0.5rem;
+  }
+
+  .onboarding-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .onboarding-tooltip {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    transform: none !important;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+  }
+
+  .onboarding-actions {
+    flex-direction: column;
+  }
+
+  .onboarding-btn {
+    width: 100%;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

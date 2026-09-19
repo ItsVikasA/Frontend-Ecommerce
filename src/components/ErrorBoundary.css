@@ -1,0 +1,166 @@
+/* ============================================================================
+   ERROR BOUNDARY - Minimalistic Error Page
+   ============================================================================ */
+
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: #fafafa;
+}
+
+.error-boundary-card {
+  max-width: 500px;
+  width: 100%;
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.error-boundary-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #fafafa;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.error-boundary-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.75rem;
+}
+
+.error-boundary-message {
+  font-size: 0.938rem;
+  color: #757575;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.error-boundary-details {
+  text-align: left;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
+
+.error-boundary-details summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.error-boundary-stack {
+  font-size: 0.75rem;
+  color: #757575;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.error-boundary-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-boundary-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.938rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-boundary-button-primary {
+  background: #000000;
+  color: #ffffff;
+}
+
+.error-boundary-button-primary:hover {
+  background: #1a1a1a;
+  transform: translateY(-1px);
+}
+
+.error-boundary-button-secondary {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+.error-boundary-button-secondary:hover {
+  background: #fafafa;
+}
+
+/* Dark mode */
+body.dark-mode .error-boundary {
+  background: #0a0a0a;
+}
+
+body.dark-mode .error-boundary-card {
+  background: #1a1a1a;
+  border-color: #333333;
+}
+
+body.dark-mode .error-boundary-icon {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+body.dark-mode .error-boundary-title {
+  color: #ffffff;
+}
+
+body.dark-mode .error-boundary-message {
+  color: #bdbdbd;
+}
+
+body.dark-mode .error-boundary-details {
+  background: #0a0a0a;
+  border-color: #333333;
+}
+
+body.dark-mode .error-boundary-details summary {
+  color: #ffffff;
+}
+
+body.dark-mode .error-boundary-stack {
+  color: #bdbdbd;
+}
+
+body.dark-mode .error-boundary-button-primary {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode .error-boundary-button-primary:hover {
+  background: #e0e0e0;
+}
+
+body.dark-mode .error-boundary-button-secondary {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+body.dark-mode .error-boundary-button-secondary:hover {
+  background: #1a1a1a;
+}

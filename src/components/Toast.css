@@ -1,0 +1,124 @@
+/* ============================================================================
+   TOAST NOTIFICATION - Minimalistic
+   ============================================================================ */
+
+.toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s ease-out;
+  margin-bottom: 0.75rem;
+}
+
+.toast-exit {
+  animation: slideOutRight 0.3s ease-out forwards;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.toast-icon {
+  flex-shrink: 0;
+}
+
+.toast-message {
+  font-size: 0.875rem;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: #757575;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+  margin-left: 0.5rem;
+}
+
+.toast-close:hover {
+  color: #000000;
+}
+
+/* Toast types */
+.toast-success .toast-icon {
+  color: #000000;
+}
+
+.toast-error .toast-icon {
+  color: #000000;
+}
+
+.toast-warning .toast-icon {
+  color: #000000;
+}
+
+.toast-info .toast-icon {
+  color: #000000;
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Dark mode support */
+body.dark-mode .toast {
+  background: #1a1a1a;
+  border-color: #333333;
+}
+
+body.dark-mode .toast-message {
+  color: #ffffff;
+}
+
+body.dark-mode .toast-close {
+  color: #bdbdbd;
+}
+
+body.dark-mode .toast-close:hover {
+  color: #ffffff;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .toast {
+    min-width: 0;
+    width: calc(100vw - 2rem);
+    max-width: none;
+  }
+}

@@ -1,0 +1,63 @@
+/* ============================================================================
+   SPINNER - Minimalistic Loading Indicator
+   ============================================================================ */
+
+.spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.spinner {
+  display: inline-block;
+}
+
+.spinner-circle {
+  border: 2px solid #e0e0e0;
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Sizes */
+.spinner-small .spinner-circle {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.spinner-medium .spinner-circle {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+.spinner-large .spinner-circle {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
+
+.spinner-text {
+  font-size: 0.875rem;
+  color: #757575;
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode */
+body.dark-mode .spinner-circle {
+  border-color: #333333;
+  border-top-color: #ffffff;
+}
+
+body.dark-mode .spinner-text {
+  color: #bdbdbd;
+}

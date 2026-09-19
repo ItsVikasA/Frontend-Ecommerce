@@ -1,0 +1,355 @@
+/* ============================================================================
+   HOME PAGE - Minimalistic Theme
+   ============================================================================ */
+
+.home-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #fafafa;
+}
+
+.home-card {
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  animation: fadeInUp 0.3s ease-out;
+  overflow: hidden;
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.home-welcome {
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.home-username {
+  color: #000000;
+  display: inline-block;
+  font-weight: 700;
+}
+
+/* ============================================================================
+   LOGOUT BUTTON - Touch-Friendly
+   ============================================================================ */
+
+.home-tour-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #757575;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-tour-btn:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+  border-color: #bdbdbd;
+}
+
+.home-tour-btn:active {
+  transform: translateY(1px);
+}
+
+.home-logout {
+  min-height: 44px; /* Touch-friendly */
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-logout:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.home-logout:active {
+  transform: translateY(1px);
+}
+
+/* ============================================================================
+   STATUS & ERROR
+   ============================================================================ */
+
+.home-content {
+  padding: 2.5rem;
+}
+
+.home-status {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #757575;
+  font-size: 0.938rem;
+}
+
+.home-error {
+  padding: 1rem 1.25rem;
+  background-color: #fff5f5;
+  color: #c41e3a;
+  border: 1px solid #ffc9c9;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   PROFILE INFO
+   ============================================================================ */
+
+.home-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.home-profile-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  margin: 0;
+}
+
+.home-profile-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.home-profile-row:first-child {
+  padding-top: 0;
+}
+
+.home-profile-label {
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: #757575;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.home-profile-value {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+  word-break: break-word;
+  margin: 0;
+}
+
+/* ============================================================================
+   DARK MODE
+   ============================================================================ */
+
+body.dark-mode .home-shell {
+  background: #0a0a0a;
+}
+
+body.dark-mode .home-card {
+  background: #1a1a1a;
+  border-color: #333333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .home-welcome {
+  color: #ffffff;
+}
+
+body.dark-mode .home-username {
+  color: #ffffff;
+}
+
+body.dark-mode .home-header {
+  background: #1a1a1a;
+  border-bottom-color: #333333;
+}
+
+body.dark-mode .home-tour-btn {
+  background: #0a0a0a;
+  border-color: #333333;
+  color: #bdbdbd;
+}
+
+body.dark-mode .home-tour-btn:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+  border-color: #424242;
+}
+
+body.dark-mode .home-logout {
+  background: #0a0a0a;
+  border-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .home-logout:hover {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+body.dark-mode .home-status {
+  color: #bdbdbd;
+}
+
+body.dark-mode .home-error {
+  background: #2d1111;
+  border-color: #5c2020;
+  color: #ff6b6b;
+}
+
+body.dark-mode .home-profile-row {
+  border-bottom-color: #2a2a2a;
+}
+
+body.dark-mode .home-profile-label {
+  color: #bdbdbd;
+}
+
+body.dark-mode .home-profile-value {
+  color: #ffffff;
+}
+
+/* ============================================================================
+   RESPONSIVE - Mobile First
+   ============================================================================ */
+
+@media (max-width: 640px) {
+  .home-shell {
+    padding: 1rem;
+  }
+  
+  .home-card {
+    border-radius: 12px;
+  }
+  
+  .home-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    padding: 1.5rem 1.75rem;
+  }
+  
+  .home-welcome {
+    font-size: 1.375rem;
+    text-align: center;
+  }
+  
+  .home-header > div {
+    width: 100%;
+    justify-content: stretch;
+  }
+  
+  .home-tour-btn {
+    flex: 0 0 auto;
+  }
+  
+  .home-logout {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .home-content {
+    padding: 1.75rem;
+  }
+  
+  .home-profile-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+  
+  .home-profile-label {
+    font-size: 0.75rem;
+  }
+  
+  .home-profile-value {
+    font-size: 0.938rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-shell {
+    padding: 0;
+  }
+  
+  .home-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .home-header {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .home-content {
+    padding: 1.5rem;
+  }
+  
+  .home-welcome {
+    font-size: 1.25rem;
+  }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .home-header {
+    padding: 1rem 2rem;
+  }
+  
+  .home-content {
+    padding: 1.5rem 2rem;
+  }
+  
+  .home-profile-row {
+    padding: 0.75rem 0;
+  }
+}

@@ -1,0 +1,66 @@
+/* ============================================================================
+   SKELETON LOADER - Minimalistic Placeholder
+   ============================================================================ */
+
+.skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 50%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+.skeleton-text {
+  height: 1rem;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  width: 60%;
+}
+
+.skeleton-button {
+  height: 2.5rem;
+  border-radius: 2px;
+}
+
+.skeleton-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  height: 10rem;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Dark mode */
+body.dark-mode .skeleton {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 0%,
+    #1a1a1a 50%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 100%;
+}

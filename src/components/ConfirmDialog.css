@@ -1,0 +1,210 @@
+/* ============================================================================
+   CONFIRMATION DIALOG - Minimalistic Modal
+   ============================================================================ */
+
+.confirm-dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.confirm-dialog {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.confirm-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirm-dialog-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.confirm-dialog-close {
+  background: none;
+  border: none;
+  color: #757575;
+  cursor: pointer;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+
+.confirm-dialog-close:hover {
+  color: #000000;
+  background: #fafafa;
+}
+
+.confirm-dialog-body {
+  padding: 1.5rem;
+}
+
+.confirm-dialog-message {
+  font-size: 0.938rem;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.confirm-dialog-footer {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  justify-content: flex-end;
+}
+
+.confirm-dialog-button {
+  min-height: 40px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.confirm-dialog-button-cancel {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #e0e0e0;
+}
+
+.confirm-dialog-button-cancel:hover {
+  background: #fafafa;
+}
+
+.confirm-dialog-button-confirm {
+  background: #000000;
+  color: #ffffff;
+}
+
+.confirm-dialog-button-confirm:hover {
+  background: #1a1a1a;
+}
+
+.confirm-dialog-button-confirm.danger {
+  background: #dc2626;
+}
+
+.confirm-dialog-button-confirm.danger:hover {
+  background: #b91c1c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode */
+body.dark-mode .confirm-dialog {
+  background: #1a1a1a;
+  border-color: #333333;
+}
+
+body.dark-mode .confirm-dialog-header {
+  border-bottom-color: #333333;
+}
+
+body.dark-mode .confirm-dialog-title {
+  color: #ffffff;
+}
+
+body.dark-mode .confirm-dialog-close {
+  color: #bdbdbd;
+}
+
+body.dark-mode .confirm-dialog-close:hover {
+  color: #ffffff;
+  background: #2a2a2a;
+}
+
+body.dark-mode .confirm-dialog-message {
+  color: #ffffff;
+}
+
+body.dark-mode .confirm-dialog-footer {
+  border-top-color: #333333;
+}
+
+body.dark-mode .confirm-dialog-button-cancel {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+body.dark-mode .confirm-dialog-button-cancel:hover {
+  background: #2a2a2a;
+}
+
+body.dark-mode .confirm-dialog-button-confirm {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode .confirm-dialog-button-confirm:hover {
+  background: #e0e0e0;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .confirm-dialog {
+    max-width: none;
+    margin: 0 0.5rem;
+  }
+  
+  .confirm-dialog-footer {
+    flex-direction: column-reverse;
+  }
+  
+  .confirm-dialog-button {
+    width: 100%;
+  }
+}
