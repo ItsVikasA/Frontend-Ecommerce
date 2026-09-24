@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { clearToken, getToken } from '../utils/tokenUtils.js';
-import API_BASE_URL from '../config/api.js';
 
 /**
  * services/api.js
@@ -13,6 +12,9 @@ import API_BASE_URL from '../config/api.js';
  * - Auto-logout on 401 for protected endpoints
  * - Normalized error handling
  */
+
+// API Base URL - reads from environment variable or defaults to localhost
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8081';
 
 // Retry configuration
 const MAX_RETRIES = 3;

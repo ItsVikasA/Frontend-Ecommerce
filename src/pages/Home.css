@@ -1,55 +1,96 @@
 /* ============================================================================
-   HOME PAGE - Minimalistic Theme
+   HOME PAGE - Modern Dashboard Layout
    ============================================================================ */
 
-.home-shell {
+.home-container {
   min-height: 100vh;
+  background: #f8f9fa;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: #fafafa;
-}
-
-.home-card {
-  width: 100%;
-  max-width: 680px;
-  background: #ffffff;
-  padding: 0;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  animation: fadeInUp 0.3s ease-out;
-  overflow: hidden;
+  flex-direction: column;
 }
 
 /* ============================================================================
-   HEADER
+   NAVIGATION BAR
    ============================================================================ */
 
-.home-header {
+.home-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.25rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 2rem 2.5rem;
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .home-welcome {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #000000;
   letter-spacing: -0.02em;
-  line-height: 1.3;
   margin: 0;
 }
 
 .home-username {
-  color: #000000;
-  display: inline-block;
+  color: #007bff;
   font-weight: 700;
+}
+
+/* ============================================================================
+   MAIN LAYOUT - Sidebar + Content
+   ============================================================================ */
+
+.home-main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  flex: 1;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================================
+   SIDEBAR - Profile Card
+   ============================================================================ */
+
+.home-sidebar {
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.home-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* ============================================================================
+   CONTENT AREA - Gallery
+   ============================================================================ */
+
+.home-content-area {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================================================
@@ -117,15 +158,11 @@
    STATUS & ERROR
    ============================================================================ */
 
-.home-content {
-  padding: 2.5rem;
-}
-
 .home-status {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   color: #757575;
-  font-size: 0.938rem;
+  font-size: 0.875rem;
 }
 
 .home-error {
@@ -133,9 +170,9 @@
   background-color: #fff5f5;
   color: #c41e3a;
   border: 1px solid #ffc9c9;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 0.875rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* ============================================================================
@@ -150,10 +187,10 @@
 }
 
 .home-profile-row {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 2rem;
-  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #f5f5f5;
   margin: 0;
 }
@@ -168,7 +205,7 @@
 }
 
 .home-profile-label {
-  font-size: 0.813rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #757575;
   text-transform: uppercase;
@@ -188,14 +225,19 @@
    DARK MODE
    ============================================================================ */
 
-body.dark-mode .home-shell {
+body.dark-mode .home-container {
   background: #0a0a0a;
 }
 
-body.dark-mode .home-card {
+body.dark-mode .home-navbar {
+  background: #1a1a1a;
+  border-bottom-color: #333333;
+}
+
+body.dark-mode .home-card,
+body.dark-mode .home-content-area {
   background: #1a1a1a;
   border-color: #333333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .home-welcome {
@@ -203,11 +245,11 @@ body.dark-mode .home-welcome {
 }
 
 body.dark-mode .home-username {
-  color: #ffffff;
+  color: #4a9eff;
 }
 
-body.dark-mode .home-header {
-  background: #1a1a1a;
+body.dark-mode .sidebar-title {
+  color: #ffffff;
   border-bottom-color: #333333;
 }
 
@@ -261,95 +303,76 @@ body.dark-mode .home-profile-value {
    RESPONSIVE - Mobile First
    ============================================================================ */
 
-@media (max-width: 640px) {
-  .home-shell {
-    padding: 1rem;
+@media (max-width: 1024px) {
+  .home-main {
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
-  
-  .home-card {
-    border-radius: 12px;
-  }
-  
-  .home-header {
+}
+
+@media (max-width: 768px) {
+  .home-navbar {
+    padding: 1rem 1.5rem;
     flex-direction: column;
+    gap: 1rem;
     align-items: stretch;
-    gap: 1.25rem;
-    padding: 1.5rem 1.75rem;
   }
-  
+
   .home-welcome {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     text-align: center;
   }
-  
-  .home-header > div {
-    width: 100%;
-    justify-content: stretch;
-  }
-  
-  .home-tour-btn {
-    flex: 0 0 auto;
-  }
-  
-  .home-logout {
-    flex: 1;
-    justify-content: center;
-  }
-  
-  .home-content {
-    padding: 1.75rem;
-  }
-  
-  .home-profile-row {
+
+  .home-main {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 1rem 0;
+    gap: 1.5rem;
+    padding: 1rem;
   }
-  
-  .home-profile-label {
-    font-size: 0.75rem;
+
+  .home-sidebar {
+    position: relative;
+    top: 0;
   }
-  
-  .home-profile-value {
-    font-size: 0.938rem;
+
+  .home-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-navbar {
+    padding: 1rem;
+  }
+
+  .home-welcome {
+    font-size: 1.125rem;
+  }
+
+  .home-main {
+    padding: 0.75rem;
+  }
+
+  .home-card {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+
+  .home-content-area {
+    border-radius: 8px;
+  }
+
+  .sidebar-title {
+    font-size: 1.125rem;
   }
 }
 
 @media (max-width: 480px) {
-  .home-shell {
-    padding: 0;
+  .home-navbar {
+    position: relative;
   }
-  
-  .home-card {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
-  
-  .home-header {
-    padding: 1.25rem 1.5rem;
-  }
-  
-  .home-content {
-    padding: 1.5rem;
-  }
-  
-  .home-welcome {
-    font-size: 1.25rem;
-  }
-}
 
-/* Landscape mobile */
-@media (max-height: 600px) and (orientation: landscape) {
-  .home-header {
-    padding: 1rem 2rem;
-  }
-  
-  .home-content {
-    padding: 1.5rem 2rem;
-  }
-  
-  .home-profile-row {
-    padding: 0.75rem 0;
+  .home-main {
+    padding: 0.5rem;
   }
 }
